@@ -9,9 +9,9 @@ This repo was created so I would have a working share.js / codemirror example wi
 but I'm using share in a project that already has a huge number of dependencies.
 4. Use JavaScript instead of CoffeeScript. I don't know CoffeeScript, although I like the way it looks...
 
-*Installation and Use*
+##Installation and Use##
 
-**Server**
+###Server###
 
 Using Git:
 
@@ -24,8 +24,8 @@ Using NPM:
 2. Run `npm install share.js.codemirror.example` to install
 3. Run `node node_modules/share.js.codemirror.example` to start the server. You can optionally pass a port to run on with the `-p` argument
 
-** Client **
+###Client###
 
-3. Open a browser and launch `127.0.0.1:8007` substituting a port number you passed as an argument when starting the server if needed.
-4. Open another tab and launch the same url
-5. Type some JavaScript into the codemirror instances. They should be synced.
+1. Open a browser and launch `127.0.0.1:8007` substituting a port number you passed as an argument when starting the server if needed.
+2. Open another tab and launch the same url
+3. Type some JavaScript into the codemirror instances. They should be synced.
