@@ -1,0 +1,33 @@
+{
+  "name": "sharejs.codemirror.example",
+  "version": "0.0.0",
+  "description": "Includes an example JS websocket sharejs server, and a client page that uses codemirror with sharejs.",
+  "main": "index.js",
+  "dependencies": {
+    "connect": "~3.2.0",
+    "serve-static": "~1.6.3",
+    "share": "~0.7.3",
+    "share-codemirror": "~0.0.5",
+    "ws": "~0.4.32",
+    "livedb": "~0.4.8",
+    "optimist": "~0.6.1",
+    "codemirror": "~4.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/charlieroberts/sharejs.codemirror.example.git"
+  },
+  "keywords": [
+    "sharejs",
+    "codemirror"
+  ],
+  "author": "Charlie Roberts <charlie@charlie-roberts.com> (http://www.charlie-roberts.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/charlieroberts/sharejs.codemirror.example/issues"
+  }
+}
