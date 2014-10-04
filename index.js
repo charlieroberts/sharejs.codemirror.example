@@ -7,12 +7,10 @@ var connect = require( 'connect' ),
     share   = require( './server' )( app, server ),
     port    = argv.p || 8007,
     shareCodeMirror = require( 'share-codemirror' )
-
-
-console.log( shareCodeMirror.scriptsDir )  
   
 app.use( serveStatic( __dirname + '/public/' ) )
-app.use( serveStatic( __dirname + '/../node_modules/share/webclient/' ) )
+app.use( share.scriptsDir )
+// app.use( serveStatic( __dirname + '/../node_modules/share/webclient/' ) )
 app.use( serveStatic( shareCodeMirror.scriptsDir ) )
 
 server.listen( port )
