@@ -5,12 +5,15 @@ var connect = require( 'connect' ),
     app     = connect(), /* connect.static( sharejs.scriptsDir )*/ 
     server  = http.createServer( app ),
     share   = require( './server' )( app, server ),
-    port    = argv.p || 8007
+    port    = argv.p || 8007,
+    shareCodeMirror = require( 'share-codemirror' )
 
-    console.log(  __dirname + '/../node_modules/share/webclient/' )
-    
+
+console.log( shareCodeMirror.scriptsDir )  
+  
 app.use( serveStatic( __dirname + '/public/' ) )
 app.use( serveStatic( __dirname + '/../node_modules/share/webclient/' ) )
+app.use( serveStatic( shareCodeMirror.scriptsDir ) )
 
 server.listen( port )
 

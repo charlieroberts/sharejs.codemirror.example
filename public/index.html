@@ -8,25 +8,36 @@
     background-repeat: no-repeat;
   }
 </style>
+
+<link rel="stylesheet" href="codemirror.css" type="text/css" media="screen" title="no title" charset="utf-8">
+
 <textarea id='pad' autofocus>Connecting...</textarea>
 <script src="share.uncompressed.js"></script>
+<script src="codemirror.js"></script>
+<script src="share-codemirror.js"></script>
 <script src="client.js"></script>
-<script>
+<script src="javascript/javascript.js" type="text/javascript" charset="utf-8"></script>
+<!-- <script src="text.js" type="text/javascript" charset="utf-8"></script> -->
 
-// var elem = document.getElementById('pad');
+<script>
+var cm = CodeMirror.fromTextArea( document.getElementById('pad') )
+cm.setOption('mode', 'javascript')
+//cm.setMode('javascript')
+
+var elem = document.getElementById('pad');
 // 
-// var ws = new WebSocket('ws://' + window.location.host);
+var ws = new WebSocket('ws://' + window.location.host );
 // 
-// var sjs = new window.sharejs.Connection(ws);
+var sjs = new window.sharejs.Connection( ws );
 // 
-// var doc = sjs.get('users', 'seph');
+var doc = sjs.get( 'users', 'seph' );
 // console.log(doc);
-// doc.subscribe();
-// 
-// doc.whenReady(function () {
-//   if (!doc.type) doc.create('text');
-//   if (doc.type && doc.type.name === 'text')
-//     doc.attachTextarea(elem);
-// });
+doc.subscribe();
+
+doc.whenReady(function () {
+  if (!doc.type) doc.create('text');
+  if (doc.type && doc.type.name === 'text')
+  doc.attachCodeMirror(cm);
+});
 
 </script>
